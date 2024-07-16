@@ -1,0 +1,103 @@
+.sidebar {
+ 
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $cards-color-gray2;
+
+
+  
+  
+
+  &__imgCover{
+    width: 100%;
+    height: 72px;
+    object-fit: cover;
+
+  }
+
+  &__profile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+
+  margin-top: calc(0px - 1.5rem - 6px);
+
+
+  }
+  &__imgAvatar {
+    width: calc(3rem + 12px);
+    height: calc(3rem + 12px);
+
+    border-radius: 5px;
+   
+    border: 2px solid $secondary-color ;
+    outline: 2px solid $primary-color;
+ 
+  }
+
+  &__name {
+    color: $text-titles-gray7;
+    text-align: center;
+    font-family: $base-font;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    margin-top: 16px;
+ 
+  }
+
+  &__career {
+    font-family: $base-font;
+    color: $supporting-text-gray5;
+    font-size: $font-size-medium;
+    text-align: right;
+    font-weight: $font-weight-regular;
+    line-height: 1.6;
+  }
+
+  &__footer {
+   
+   
+    
+    border-top: 1px solid $divider-color-gray3;
+    margin-top: 1.5rem;
+    padding: 1.5rem 2rem 2rem;
+ 
+
+
+    &--edit {
+   width: 100%;
+   background: transparent;
+   color: $secondary-color;
+   border: 1px solid $secondary-color;
+   border-radius: 8px;
+   height: 50px;
+   padding: 0 1.5rem;
+   font-weight: $font-weight-bold;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   transition: color 0.1s, background 0.1s;
+   
+    }
+
+    &--iconAside {
+      color: $secondary-color;
+      font-family: $base-font;
+      font-size: $font-size-large;
+      font-weight: $font-weight-bold;
+    }
+
+    &--edit:hover{
+        color: $white-color;
+        background: $primary-color;
+
+    }
+
+ 
+  }}
+
+   

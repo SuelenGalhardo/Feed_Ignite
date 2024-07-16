@@ -11,3 +11,6 @@
 ![Captura de tela 2024-04-11 145733](https://github.com/SuelenGalhardo/Feed_Ignite/assets/122880141/4a193ea2-100c-4862-99c7-720348ff0522)
 
 
+Librerias de iconos:
+https://phosphoricons.com/
+https://github.com/phosphor-icons/react
