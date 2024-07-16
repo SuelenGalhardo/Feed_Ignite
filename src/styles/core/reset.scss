@@ -1,4 +1,4 @@
-//@import "variables";
+@import "variables";
 
 
 * {
@@ -9,16 +9,22 @@
   
   body {
 
-
+ 
+    background-color: $background-color-gray1;
+    color: $text-gray6;
   
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; //padronizar fonts
   }
   body,
   input,
   button,
   textarea {
-    font-family: $font-primary;
-    font-size: 1rem;
+
+    
+    font-family:$base-font;
+    font-weight: $font-weight-regular;
+    font-size: 1rem; //16px
+
     outline: none;
     text-decoration: none;
   }
@@ -43,7 +49,7 @@
   }
   .links,
   li {
-    margin-top: 12px;
+ 
     list-style: none;
   }
   .links,
