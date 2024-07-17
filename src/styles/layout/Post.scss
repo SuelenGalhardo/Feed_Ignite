@@ -1,0 +1,112 @@
+
+.post{
+
+
+    background: $cards-color-gray2;
+    border-radius: 8px;
+    padding: 2.5rem;
+
+
+
+
+
+
+
+
+
+    &__author{
+
+
+    }
+    &__avatar{
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        border: 2px solid $secondary-color;
+
+         
+
+    }
+
+    
+
+    &__time{
+        color:$supporting-text-gray5;
+        font-size: $font-size-medium;
+        font-weight: $font-weight-regular;
+        line-height: 22px;
+
+
+
+
+
+    }
+
+    &__content{
+
+        width: 752px;
+        height: 206px;
+        line-height: 1.6;
+        &--text{
+            color: $text-gray6;
+    font-size: $font-size-large;
+    font-weight: $font-weight-regular;
+    line-height: 25px;
+        }
+
+   
+
+
+        &--link{
+            color: $secondary-color;
+            font-size: $font-size-large;
+            font-weight: $font-weight-bold;
+            line-height: 25px;
+
+
+        }
+
+        &--link:hover{
+            color: $primary-color;
+         
+        }
+
+        
+      
+        
+
+    }
+
+
+
+
+}
+
+.post__authorInfor{
+
+
+    &--name{
+        color:$text-titles-gray7 ;
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+        line-height: 25px;
+
+
+
+    }
+
+    &--career{
+        color: $supporting-text-gray5;
+        font-size: $font-size-medium;
+        font-weight: $font-weight-regular;
+        line-height: 25px;
+
+
+    }
+
+
+}
+
+.post + .post{
+    margin-top: 2rem;
+}

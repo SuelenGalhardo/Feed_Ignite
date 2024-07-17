@@ -29,6 +29,11 @@ export function App() {
         content= "lorem ipsum dolor sit amet, consectetur adip"
         
         />
+            <Post
+        author="Otto Ranucci "
+        content= "lorem ipsum dolor sit amet, consectetur adip"
+        
+        />
       </main>
 
      </div>
