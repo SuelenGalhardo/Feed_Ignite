@@ -1,112 +1,128 @@
 
-.post{
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.post {
+  background: $cards-color-gray2;
+  border-radius: 8px;
+  padding: 2.5rem;
 
-    background: $cards-color-gray2;
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 25px;
+  }
+  &__avatar {
+    width: 60px;
+    height: 60px;
     border-radius: 8px;
-    padding: 2.5rem;
+    border: 2px solid $secondary-color;
+    outline: 2px solid $primary-color;
+  }
 
-
-
-
-
-
-
-
-
-    &__author{
-
-
-    }
-    &__avatar{
-        width: 60px;
-        height: 60px;
-        border-radius: 8px;
-        border: 2px solid $secondary-color;
-
-         
-
-    }
-
+  &__time {
     
+    color: $supporting-text-gray5;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-regular;
+    line-height: 22px;
+  }
 
-    &__time{
-        color:$supporting-text-gray5;
-        font-size: $font-size-medium;
-        font-weight: $font-weight-regular;
-        line-height: 22px;
+  &__content {
+    width: 752px;
+    height: 206px;
+    line-height: 1.6;
 
-
-
-
-
+    &--text {
+      color: $text-gray6;
+      font-size: $font-size-large;
+      font-weight: $font-weight-regular;
+      line-height: 25px;
+      margin-top: 1rem;
     }
 
-    &__content{
+    &--link {
+      color: $secondary-color;
+      font-size: $font-size-large;
+      font-weight: $font-weight-bold;
+      line-height: 25px;
+    }
 
-        width: 752px;
-        height: 206px;
-        line-height: 1.6;
-        &--text{
-            color: $text-gray6;
+    &--link:hover {
+      color: $primary-color;
+    }
+  }
+  &__form {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid $divider-color-gray3;
+
+    &--feedback {
+      line-height: 1.6;
+      color: $text-gray6;
+    }
+    &--commit {
+      width: 100%;
+      background: $background-color-gray1;
+      border: 0;
+      resize: none;
+      height: 6rem;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      color: $text-gray6;
+      line-height: 1.4;
+      margin-top: 1rem;
+      border: 1px solid $secondary-color;
+    }
+  }
+}
+
+.post__authorInfo {
+  &--name {
+    display: block;
+    color: $text-titles-gray7;
     font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    line-height: 25px;
+  }
+
+  &--career {
+    display: block;
+    color: $supporting-text-gray5;
+    font-size: $font-size-medium;
     font-weight: $font-weight-regular;
     line-height: 25px;
-        }
-
-   
-
-
-        &--link{
-            color: $secondary-color;
-            font-size: $font-size-large;
-            font-weight: $font-weight-bold;
-            line-height: 25px;
-
-
-        }
-
-        &--link:hover{
-            color: $primary-color;
-         
-        }
-
-        
-      
-        
-
-    }
-
-
-
-
+  }
 }
 
-.post__authorInfor{
-
-
-    &--name{
-        color:$text-titles-gray7 ;
-        font-size: $font-size-large;
-        font-weight: $font-weight-bold;
-        line-height: 25px;
-
-
-
-    }
-
-    &--career{
-        color: $supporting-text-gray5;
-        font-size: $font-size-medium;
-        font-weight: $font-weight-regular;
-        line-height: 25px;
-
-
-    }
-
-
+.post + .post {
+  margin-top: 2rem;
 }
 
-.post + .post{
-    margin-top: 2rem;
+.footerBtn {
+  visibility: hidden;
+  max-height: 0;
+
+  &__button[type="submit"] {
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 0;
+    background: $primary-color;
+    color: $white-color;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background-color 0.1s;
+  }
 }
+
+.form:focus-within.footerBtn__button[type="submit"]:hover {
+  background: $secondary-color;
+}
+
