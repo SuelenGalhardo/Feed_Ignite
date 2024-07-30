@@ -1,0 +1,99 @@
+.comment {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+
+  &__img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+  }
+
+  &__commentBox {
+    flex: 1;
+  }
+  &__Content {
+    background: #29292E;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  &__header{
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &--authorAndTime {
+        display: block;
+        font-size: 0.75rem;
+        line-height: 1.6;
+        color: $text-gray6;
+      }
+      
+    &--authorAndTime  strong {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.6;
+
+  }
+  &--authorAndTime time{
+
+    display: block;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: $text-gray6;
+  }
+  
+  &--buttonDelete{
+    background: transparent;
+  border: 0;
+  color:$supporting-text-gray5;
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 2px;
+
+  }
+  &--buttonDelete:hover{
+    color: $tertiary-color;
+  }
+
+
+}}
+
+.comment p{
+    margin-top: 1rem;
+    color:$text-titles-gray7;
+}
+.comment__commentBox footer{
+    margin-top: 1rem;
+
+}
+.comment__footer{
+
+    margin-top: 1rem;
+}
+.comment__btnApplaud{
+    background: transparent;
+    border: 0;
+    color: $supporting-text-gray5;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+  
+    border-radius: 2px;
+
+}
+
+.comment__btnApplaud:hover{
+    color: $tertiary-color;
+}
+
+.comment__btnApplaud svg{
+    margin-right: 0.5rem;
+}
+
+.comment__btnApplaud span::before{
+    content: "\2022";
+}
