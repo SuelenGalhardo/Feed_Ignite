@@ -1,0 +1,19 @@
+.imgAvatar {
+    width: calc(3rem + 12px);
+    height: calc(3rem + 12px);
+
+    border-radius: 5px;
+   
+   
+ 
+  }
+  .imgAvatarWithBorder{
+    width: calc(3rem + 12px);
+    height: calc(3rem + 12px);
+
+    border-radius: 5px;
+
+    border: 2px solid $secondary-color ;
+    outline: 2px solid $primary-color;
+  }
+

@@ -55,7 +55,7 @@
 
   }
   &--buttonDelete:hover{
-    color: $tertiary-color;
+    color: $secondary-color;
   }
 
 
@@ -87,7 +87,7 @@
 }
 
 .comment__btnApplaud:hover{
-    color: $tertiary-color;
+    color: $secondary-color;
 }
 
 .comment__btnApplaud svg{
@@ -95,5 +95,6 @@
 }
 
 .comment__btnApplaud span::before{
+    padding:  0 0.25rem;
     content: "\2022";
 }
