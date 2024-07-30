@@ -1,6 +1,9 @@
 @import "variables";
 
-
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px $primary-color;
+}
 * {
     box-sizing: border-box;
     margin: 0;
