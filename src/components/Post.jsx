@@ -1,5 +1,5 @@
 
-
+import { Comment } from "./Comment"
 
   export function Post() {
     return (
@@ -45,6 +45,11 @@
           <button className="footerBtn__button" type="submit">Publicar</button>
         </footer>
       </form>
+      <div className="commentList">
+        <Comment />
+        <Comment />
+        <Comment />
+      </div>
 
       </article>
        
