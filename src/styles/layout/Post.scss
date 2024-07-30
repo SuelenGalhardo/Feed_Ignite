@@ -9,12 +9,15 @@ header {
   background: $cards-color-gray2;
   border-radius: 8px;
   padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: auto;
 
   &__author {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
   &__avatar {
     width: 60px;
@@ -34,15 +37,22 @@ header {
 
   &__content {
     width: 752px;
-    height: 206px;
+    height: 180px;
     line-height: 1.6;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+  
 
     &--text {
       color: $text-gray6;
       font-size: $font-size-large;
       font-weight: $font-weight-regular;
       line-height: 25px;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
+   
     }
 
     &--link {
@@ -50,6 +60,7 @@ header {
       font-size: $font-size-large;
       font-weight: $font-weight-bold;
       line-height: 25px;
+ 
     }
 
     &--link:hover {
@@ -58,9 +69,10 @@ header {
   }
   &__form {
     width: 100%;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
+   
+    padding-top: 1rem;
     border-top: 1px solid $divider-color-gray3;
+    margin-bottom: 1rem;
 
     &--feedback {
       line-height: 1.6;
@@ -83,6 +95,7 @@ header {
 }
 
 .post__authorInfo {
+    
   &--name {
     display: block;
     color: $text-titles-gray7;
@@ -105,24 +118,25 @@ header {
 }
 
 .footerBtn {
-  visibility: hidden;
-  max-height: 0;
-
-  &__button[type="submit"] {
-    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: flex-start; 
+    margin-top: 1rem; 
+  &__button {
+    padding: 0.8rem 1.2rem;
     margin-top: 1rem;
     border-radius: 8px;
     border: 0;
     background: $primary-color;
     color: $white-color;
     font-weight: bold;
-    cursor: pointer;
+ 
+
 
     transition: background-color 0.1s;
   }
 }
 
-.form:focus-within.footerBtn__button[type="submit"]:hover {
+.form:focus-within .footerBtn__button:hover {
   background: $secondary-color;
 }
 

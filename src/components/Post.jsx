@@ -15,7 +15,7 @@
             <span className="post__authorInfo--career">web developer</span>
 
           </div>
-          
+ 
         </div>
 
       <time className="post__time" dateTime=" 2022-07-11  08:13:30 ">Publicado hace una 1h</time>
@@ -42,7 +42,7 @@
         />
 
         <footer className="footerBtn">
-          <button className="footer__button" type="submit">Publicar</button>
+          <button className="footerBtn__button" type="submit">Publicar</button>
         </footer>
       </form>
 
