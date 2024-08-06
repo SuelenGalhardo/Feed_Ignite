@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
 import { format, formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
 
+
+
+
+
+// estado = son variables que quiero que el componente monitore 
+
 export function Post({author, publishedAt, content}) {
+
+  const [comments, setComments] = useState ([
+    1,
+    2,]
+
+
+  )
+
+
   const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'a las' HH:mm'h'", {
     locale: es,
   });
@@ -13,6 +28,15 @@ export function Post({author, publishedAt, content}) {
     locale: es,
     addSuffix: true
   });
+
+  function handleNewComment(event) {
+    event.preventDefault();
+
+    setComments([...comments, comments.length + 1]);
+
+  
+   
+  }
 
  
 
@@ -46,7 +70,7 @@ export function Post({author, publishedAt, content}) {
  
          })}
         </div>
-        <form className="post__form">
+        <form onSubmit={handleNewComment} className="post__form">
           <strong className="port__form--feedback">Deja tu feedback</strong>
 
           <textarea
@@ -61,9 +85,10 @@ export function Post({author, publishedAt, content}) {
           </footer>
         </form>
         <div className="commentList">
-          <Comment />
-          <Comment />
-          <Comment />
+        {comments.map(comment => {
+          return <Comment />
+        })}
+
         </div>
       </article>
     </>
