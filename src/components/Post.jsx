@@ -1,55 +1,50 @@
+import React from 'react';
 import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
+import { format, formatDistanceToNow } from 'date-fns';
+import { es } from 'date-fns/locale';
 
-export function Post(props) {
+export function Post({author, publishedAt, content}) {
+  const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'a las' HH:mm'h'", {
+    locale: es,
+  });
 
-  console.log(props)
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    locale: es,
+    addSuffix: true
+  });
+
+ 
 
   return (
     <>
       <article className="post">
         <header>
           <div className="post__author">
-            <Avatar  src="https://github.com/maykbrito.png" />
+            <Avatar  src={author.avatarUrl  } />
 
             <div className="post__authorInfo">
               <strong className="post__authorInfo--name">
-                Diego Fernandes
+                {author.name}
               </strong>
-              <span className="post__authorInfo--career">web developer</span>
+              <span className="post__authorInfo--career">{author.role}</span>
             </div>
           </div>
 
-          <time className="post__time" dateTime=" 2022-07-11  08:13:30 ">
-            Publicado hace una 1h
-          </time>
+          <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
+          {publishedDateRelativeToNow}
+        </time>
         </header>
 
         <div className="post__content">
-          <p className="post__content--text">Hola Chic@s 👋 </p>
-          <p className="post__content--text">
-            Acabo de subir un poyecto en mi portafolio. Es uno que hizo en el
-            NLWJorney, con NODE.js{" "}
-          </p>
-
-          <p>
-            <a className="post__content--link" href="">
-              {" "}
-              👉 jane.design/doctorcare
-            </a>
-          </p>
-
-          <p>
-            <a className="post__content--link" href="">
-              #nuevoproyecto
-            </a>{" "}
-            <a className="post__content--link" href="">
-              #nlw
-            </a>{" "}
-            <a className="post__content--link" href="">
-              #rocketseat
-            </a>
-          </p>
+         {content.map(line => {
+          if (line.type === 'paragraph') {
+            return <p>{line.content}</p>;
+          } else if (line.type === 'link') {
+            return <p><a href="#">{line.content}</a></p>
+          }
+ 
+         })}
         </div>
         <form className="post__form">
           <strong className="port__form--feedback">Deja tu feedback</strong>

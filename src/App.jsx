@@ -8,8 +8,8 @@ const posts = [
 {
 id: 1, 
 author: {
-  avatarUrl: 'http://fithug.com/SuelenGalhardo.png',
-  name: 'Suelen Ranucci',
+  avatarUrl: 'http://github.com/Diego.png',
+  name: 'Fernando',
   career: 'web developer',
   role: 'web developer',
 },

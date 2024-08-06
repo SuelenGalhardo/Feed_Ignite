@@ -5,6 +5,10 @@
 
 🛠️ React.js || Typescript || Figma || Vite
 
+https://vitejs.dev/
+https://es.react.dev/
+https://www.typescriptlang.org/
+
 
 🎨 Layout-Figma: https://www.figma.com/file/pbmGAlMFNpKGPYXRSzqO67/Ignite-Feed-(Community)?node-id=0%3A1&mode=dev
 
@@ -14,3 +18,5 @@
 Librerias de iconos:
 https://phosphoricons.com/
 https://github.com/phosphor-icons/react
+Libreria de date :
+https://date-fns.org/
