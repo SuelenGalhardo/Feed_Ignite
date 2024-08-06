@@ -13,11 +13,12 @@ import { es } from 'date-fns/locale';
 export function Post({author, publishedAt, content}) {
 
   const [comments, setComments] = useState ([
-    1,
-    2,]
+    'Post muy chulo, alaa!'
+  
+  ])
 
+  const [newCommentText, setNewCommentText] = useState('');
 
-  )
 
 
   const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'a las' HH:mm'h'", {
@@ -32,10 +33,16 @@ export function Post({author, publishedAt, content}) {
   function handleNewComment(event) {
     event.preventDefault();
 
-    setComments([...comments, comments.length + 1]);
+
+
+    setComments([...comments, newCommentText]);
+    setNewCommentText('');
 
   
    
+  }
+  function handleNewCommentChange(event) {
+    setNewCommentText(event.target.value);
   }
 
  
@@ -74,8 +81,12 @@ export function Post({author, publishedAt, content}) {
           <strong className="port__form--feedback">Deja tu feedback</strong>
 
           <textarea
+          name='comment'
+
             className="post__form--commit"
             placeholder="Deja tu comentario"
+            value={newCommentText}
+            onChange={handleNewCommentChange}
           />
 
           <footer className="footerBtn">
@@ -86,7 +97,7 @@ export function Post({author, publishedAt, content}) {
         </form>
         <div className="commentList">
         {comments.map(comment => {
-          return <Comment />
+          return <Comment  content={comment} />
         })}
 
         </div>
@@ -94,3 +105,12 @@ export function Post({author, publishedAt, content}) {
     </>
   );
 }
+
+
+// Programacion imperactiva 
+
+//que se debe hacer paso a paso- 
+
+//Programacion declarativa 
+
+//en react evita utilizar la imperactiva  y utiliza la programacion declarativa  
