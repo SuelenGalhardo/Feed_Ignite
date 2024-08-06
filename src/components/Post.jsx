@@ -8,7 +8,7 @@ import { es } from 'date-fns/locale';
 
 
 
-// estado = son variables que quiero que el componente monitore 
+
 
 export function Post({author, publishedAt, content}) {
 
@@ -44,8 +44,15 @@ export function Post({author, publishedAt, content}) {
   function handleNewCommentChange(event) {
     setNewCommentText(event.target.value);
   }
+  
 
- 
+  function deleteComment(commentToDelete) {
+    const commentsWithoutDeletedOne = comments.filter(comment => {
+      return comment !== commentToDelete;
+    })
+
+    setComments(commentsWithoutDeletedOne);
+  }
 
   return (
     <>
@@ -70,9 +77,9 @@ export function Post({author, publishedAt, content}) {
         <div className="post__content">
          {content.map(line => {
           if (line.type === 'paragraph') {
-            return <p>{line.content}</p>;
+            return <p key={line.content}>{line.content}</p>;
           } else if (line.type === 'link') {
-            return <p><a href="#">{line.content}</a></p>
+            return <p key={line.content}><a href="#">{line.content}</a></p>
           }
  
          })}
@@ -97,20 +104,17 @@ export function Post({author, publishedAt, content}) {
         </form>
         <div className="commentList">
         {comments.map(comment => {
-          return <Comment  content={comment} />
-        })}
+           return (
+            <Comment
+              key={comment}
+              content={comment}
+              onDeleteComment={deleteComment}
+            />
+          )
+  })}
 
         </div>
       </article>
     </>
   );
 }
-
-
-// Programacion imperactiva 
-
-//que se debe hacer paso a paso- 
-
-//Programacion declarativa 
-
-//en react evita utilizar la imperactiva  y utiliza la programacion declarativa  
