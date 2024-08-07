@@ -141,6 +141,16 @@ header {
 }
 
 
+.footerBtn__button:not(:disabled):hover{
+
+  background: #00875F;
+
+}
+.footerBtn__button:disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .commentList {
   margin-top: 2rem;
 }

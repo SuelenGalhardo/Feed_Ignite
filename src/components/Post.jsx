@@ -6,10 +6,6 @@ import { es } from 'date-fns/locale';
 
 
 
-
-
-
-
 export function Post({author, publishedAt, content}) {
 
   const [comments, setComments] = useState ([
@@ -42,7 +38,11 @@ export function Post({author, publishedAt, content}) {
    
   }
   function handleNewCommentChange(event) {
+    event.target.setCustomValidity('');
     setNewCommentText(event.target.value);
+  }
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity('Este campo es obligatorio!');
   }
   
 
@@ -53,6 +53,7 @@ export function Post({author, publishedAt, content}) {
 
     setComments(commentsWithoutDeletedOne);
   }
+  const isNewCommentEmpty = newCommentText.length === 0;
 
   return (
     <>
@@ -94,10 +95,12 @@ export function Post({author, publishedAt, content}) {
             placeholder="Deja tu comentario"
             value={newCommentText}
             onChange={handleNewCommentChange}
+            onInvalid={handleNewCommentInvalid}
+            required
           />
 
           <footer className="footerBtn">
-            <button className="footerBtn__button" type="submit">
+            <button className="footerBtn__button" type="submit" disabled={isNewCommentEmpty}>
               Publicar
             </button>
           </footer>
